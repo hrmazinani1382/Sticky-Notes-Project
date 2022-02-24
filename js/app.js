@@ -10,6 +10,27 @@ function saveNotes(notes) {
     localStorage.setItem('notes' , JSON.stringify(notes))
 }
 
+function createNoteElement(id , content) {
+    const noteElement = document.createElement(textarea)
+
+    noteElement.classList.add('note')
+
+    noteElement.textContent = content
+
+    return noteElement
+
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 

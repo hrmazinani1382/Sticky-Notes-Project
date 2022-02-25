@@ -1,7 +1,6 @@
 const noteContainer = document.querySelector('.app')
 const addNoteBtn = document.querySelector('.add-note')
 
-
 function getNotes() {
     return JSON.parse(localStorage.getItem('notes') || '[]')
 }
@@ -17,9 +16,29 @@ function createNoteElement(id , content) {
 
     noteElement.textContent = content
 
+    noteElement.addEventListener('change' , () => {
+        updateNote(id , noteElement.value)
+    })
+
+    noteElement.addEventListener('dblclick' , () => {
+        deleteNote(id , noteElement)
+    })
+
     return noteElement
 
 }
+
+
+
+
+
+function updateNote(id , newContent) {}
+
+function deleteNote(id , element) {}
+
+
+
+
 
 
 

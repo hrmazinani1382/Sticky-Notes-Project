@@ -17,7 +17,7 @@ function saveNotes(notes) {
 }
 
 function createNoteElement(id , content) {
-    const noteElement = document.createElement(textarea)
+    const noteElement = document.createElement('textarea')
 
     noteElement.classList.add('note')
 
@@ -64,7 +64,10 @@ function updateNote(id , newContent) {
 }
 
 function deleteNote(id , element) {
-    
+    const notes = getNotes().filter((item) => item.id != id)
+
+    saveNotes(notes)
+    noteContainer.removeChild(element)
 }
 
 
